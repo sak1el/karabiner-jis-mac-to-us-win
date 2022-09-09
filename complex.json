@@ -1,0 +1,144 @@
+{
+  "title": "karabiner configuration for using mac like windows. complex modifications",
+  "rules": [
+    {
+      "description": "shit-caps to caps",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": { "mandatory": [ "shift" ], "optional": ["caps_lock"] }
+          },
+          "to": [
+            {
+              "key_code": "caps_lock"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "caps to shit-caps",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": {"optional": ["caps_lock"]}
+          },
+          "to": [
+            {
+              "key_code": "caps_lock",
+              "modifiers": ["shift"]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "terminal swap left cmd ctrl",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "left_command"
+          },
+          "to": [
+            {
+              "key_code": "left_control"
+            }
+          ],
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [ 
+                "^com\\.apple\\.Terminal$" ,
+                "^com\\.googlecode\\.iterm2$",
+                "^co\\.zeit\\.hyper$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "terminal swap right cmd ctrl",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "right_command"
+          },
+          "to": [
+            {
+              "key_code": "right_control"
+            }
+          ],
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [ 
+                "^com\\.apple\\.Terminal$" ,
+                "^com\\.googlecode\\.iterm2$",
+                "^co\\.zeit\\.hyper$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "terminal swap left ctrl cmd",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "left_control"
+          },
+          "to": [
+            {
+              "key_code": "left_command"
+            }
+          ],
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [ 
+                "^com\\.apple\\.Terminal$" ,
+                "^com\\.googlecode\\.iterm2$",
+                "^co\\.zeit\\.hyper$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "terminal swap right ctrl cmd",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "right_control"
+          },
+          "to": [
+            {
+              "key_code": "right_command"
+            }
+          ],
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [ 
+                "^com\\.apple\\.Terminal$" ,
+                "^com\\.googlecode\\.iterm2$",
+                "^co\\.zeit\\.hyper$"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
